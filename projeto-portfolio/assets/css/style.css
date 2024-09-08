@@ -1,0 +1,184 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Poppins", Arial, sans-serif;
+  text-decoration: none;
+}
+.container {
+  max-width: 1296px;
+  margin: auto;
+}
+body {
+  background: linear-gradient(90deg, #f8f8f8 50%, #2f4360 50%);
+}
+header,
+footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+}
+header,
+main,
+footer {
+  padding: 0 40px;
+}
+header {
+  padding-top: 10px;
+  .container {
+    & .navbar {
+      display: flex;
+      justify-content: space-between;
+      & .navbar-brand {
+        color: #000;
+        line-height: 1.1;
+        font-weight: 600;
+        font-size: 35px;
+      }
+      & .navbar-toggler {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 3px;
+        width: 24px;
+        background-color: transparent;
+        cursor: pointer;
+        border: none;
+        & .navbar-toggler-bar {
+          width: 100%;
+          height: 4px;
+          background: #fff;
+          border-radius: 4px;
+        }
+      }
+      & .navbar-nav {
+        display: none;
+      }
+    }
+  }
+}
+main {
+  height: 90vh;
+  & .main-area {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-content: center;
+    align-items: center;
+    & .about {
+      & .about--subheading {
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: #2f4360;
+      }
+      & .about--heading {
+        font-size: 80px;
+        line-height: 1.2;
+        margin-bottom: 24px;
+      }
+      & .about--btns {
+        display: flex;
+        text-transform: uppercase;
+        gap: 4px;
+        background: #fff;
+        max-width: max-content;
+        & .about--btns-more {
+          background: #2f4360;
+          color: #fff;
+        }
+        & .about--btns-hire {
+          background: #fff;
+        }
+        & [class^="about--btns-"] {
+          cursor: pointer;
+          padding: 16px 24px;
+          border: none;
+        }
+        & [class^="about--btns-"]:hover {
+          box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.3);
+        }
+      }
+    }
+    & .slider {
+      width: 800px;
+      overflow: hidden;
+      height: 100vh;
+      & .slides {
+        display: flex;
+        width: 1600px;
+        height: inherit;
+        & [class^="-slide"] {
+          width: 800px;
+          height: inherit;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+        & .-slide1 {
+          background-image: url("http://clipart-library.com/images_k/black-man-transparent/black-man-transparent-12.png");
+        }
+        & .-slide2 {
+          background-image: url("http://clipart-library.com/images_k/black-man-transparent/black-man-transparent-12.png");
+        }
+      }
+    }
+  }
+}
+footer {
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 13px;
+  bottom: 0;
+  & a {
+    color: #2f4360;
+  }
+}
+/* media */
+@media (max-width: 768px) {
+  body {
+    background: linear-gradient(-45deg, #f8f8f8 50%, #2f4360 50%);
+  }
+  header {
+    background: #000;
+    padding-bottom: 10px;
+    .container {
+      & .navbar {
+        & .navbar-brand {
+          color: #fff;
+        }
+      }
+    }
+  }
+  main {
+    & .main-area {
+      grid-template-columns: 1fr;
+      background-image: url("http://clipart-library.com/images_k/black-man-transparent/black-man-transparent-12.png");
+      background-repeat: no-repeat;
+      background-size: 100% auto;
+      background-position: center;
+      & .about {
+        & .about-area {
+          display: grid;
+          place-items: center;
+          text-align: center;
+          & .about--subheading {
+            color: rgba(255, 255, 255, 0.3);
+            order: 2;
+          }
+          & .about--heading {
+            font-size: 70px;
+            width: 100%;
+          }
+        }
+      }
+      & .slider {
+        display: none;
+      }
+    }
+  }
+  footer {
+    color: #000;
+    & a {
+      color: #fff;
+    }
+  }
+}
